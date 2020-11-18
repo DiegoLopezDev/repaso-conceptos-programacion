@@ -26,15 +26,8 @@
 //1. Creamos el molde
 
 //Metodo 1
-class Tipo {
-  velocidad;
 
-  constructor(propiedadesTipo) {
-    this.velocidad = propiedadesTipo.velocidad;
-  }
-}
-
-class TipoVehiculo extends Tipo {
+class Vehiculo {
   peso;
   color;
   marca;
@@ -45,19 +38,16 @@ class TipoVehiculo extends Tipo {
     this.color = propiedadesVehiculo.color;
     this.marca = propiedadesVehiculo.marca;
     this.tipo = propiedadesVehiculo.tipo;
-    super(this.propiedadesTipo.velocidad);
   }
 }
 
-class TipoAnimal extends Tipo {
+class Animal {
   especie;
   territorio;
   nombre;
   color;
 
   constructor(propiedadesAnimal) {
-    super(propiedadesTipo);
-
     this.especie = propiedadesAnimal.especie;
     this.territorio = propiedadesAnimal.territorio;
     this.nombre = propiedadesAnimal.nombre;
@@ -89,9 +79,8 @@ do {
       color: prompt('Ingrese el color del vehículo'),
       marca: prompt('Ingrese el marca del vehículo'),
       tipo: prompt('Ingrese el tipo del vehículo'),
-      velocidad: prompt('Ingrese el velocidad del vehículo'),
     };
-    let vehiculo = new TipoVehiculo(propiedadesV);
+    let vehiculo = new Vehiculo(propiedadesV);
     vehiculos.push(vehiculo);
   }
 
@@ -101,9 +90,8 @@ do {
       territorio: prompt('Ingrese la territorio del animal'),
       nombre: prompt('Ingrese el nombre del animal'),
       color: prompt('Ingrese el color del animal'),
-      velocidad: prompt('Ingrese la velocidad del animal'),
     };
-    let animal = new TipoAnimal(propiedadesAnimal);
+    let animal = new Animal(propiedadesAnimal);
     animales.push(animal);
   }
 
