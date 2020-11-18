@@ -86,7 +86,7 @@ do {
 
   if (respuesta == 'animal') {
     let propiedadesAnimal = {
-      especie: prompt('Ingrese el especie del animal'),
+      especie: prompt('Ingrese la especie del animal'),
       territorio: prompt('Ingrese la territorio del animal'),
       nombre: prompt('Ingrese el nombre del animal'),
       color: prompt('Ingrese el color del animal'),
@@ -100,33 +100,4 @@ do {
 
 console.log(vehiculos);
 console.log(animales);
-
-//1. Creamos el molde
-// Metodo 2
-/*class vehiculo {
-  peso;
-  color;
-  marca;
-  tipo;
-
-  constructor(propiedadesVehiculo) {
-    this.peso = propiedadesVehiculo.peso;
-    this.color = propiedadesVehiculo.color;
-    this.marcar = propiedadesVehiculo.marcar;
-    this.tipo = porpiedadesVehiculo.tipo;
-  }
-}
-
-class animal {
-  habitad;
-  clasificacion;
-  nombre;
-  tamaño;
-
-  constructor(propiedadesAnimal){
-    this.habitad = propiedadesAnimal.habitad;
-    this.clasificacion = propiedadesAnimal.clasificacion;
-    this.nombre = propiedadesAnimal.nombre;
-    this.tamaño = propiedadesAnimal.tamaño;
-  }
-}*/
+console.log(contador);
