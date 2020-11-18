@@ -58,7 +58,8 @@ do {
 
   if (respuesta == 'si') {
     /**
-     * 3. Usamos el molde (Molde de la torta) Carro para crear una instancia de carro y almacenar en ella sus propiedades (ingredientes)
+     * 3. Usamos el molde (Molde de la torta) Carro para crear una instancia de carro
+     * y almacenar en ella sus propiedades (ingredientes)
      */
 
     let propiedades = {
