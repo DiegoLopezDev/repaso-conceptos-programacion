@@ -33,11 +33,11 @@ class Vehiculo {
   marca;
   tipo;
 
-  constructor(propiedadesVehiculo) {
-    this.peso = propiedadesVehiculo.peso;
-    this.color = propiedadesVehiculo.color;
-    this.marca = propiedadesVehiculo.marca;
-    this.tipo = propiedadesVehiculo.tipo;
+  constructor(propiedades) {
+    this.peso = propiedades.peso; //propiedades.peso
+    this.color = propiedades.color; //propiedades.color
+    this.marca = propiedades.marca; //etc...
+    this.tipo = propiedades.tipo;
   }
 }
 
@@ -47,11 +47,11 @@ class Animal {
   nombre;
   color;
 
-  constructor(propiedadesAnimal) {
-    this.especie = propiedadesAnimal.especie;
-    this.territorio = propiedadesAnimal.territorio;
-    this.nombre = propiedadesAnimal.nombre;
-    this.color = propiedadesAnimal.color;
+  constructor(propiedades) {
+    this.especie = propiedades.especie; //propiedades.especie
+    this.territorio = propiedades.territorio; //propiedades.territorio
+    this.nombre = propiedades.nombre; //etc...
+    this.color = propiedades.color;
   }
 }
 
@@ -60,6 +60,7 @@ let respuesta = null;
 let contador = 0;
 let vehiculos = [];
 let animales = [];
+let propiedades = null;
 
 do {
   if (contador == 0) {
@@ -74,24 +75,26 @@ do {
   }
 
   if (respuesta == 'vehiculo') {
-    let propiedadesV = {
+    propiedades = {
       peso: prompt('Ingrese el peso del vehículo'),
       color: prompt('Ingrese el color del vehículo'),
       marca: prompt('Ingrese el marca del vehículo'),
       tipo: prompt('Ingrese el tipo del vehículo'),
     };
-    let vehiculo = new Vehiculo(propiedadesV);
+
+    let vehiculo = new Vehiculo(propiedades);
     vehiculos.push(vehiculo);
   }
 
   if (respuesta == 'animal') {
-    let propiedadesAnimal = {
+    propiedades = {
       especie: prompt('Ingrese la especie del animal'),
       territorio: prompt('Ingrese la territorio del animal'),
       nombre: prompt('Ingrese el nombre del animal'),
       color: prompt('Ingrese el color del animal'),
     };
-    let animal = new Animal(propiedadesAnimal);
+
+    let animal = new Animal(propiedades);
     animales.push(animal);
   }
 
