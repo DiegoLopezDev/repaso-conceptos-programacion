@@ -33,9 +33,9 @@ boton6.addEventListener('click', function () {
 });
 
 let apellido = document.getElementById('apellido-2');
-apellido.addEventListener('keydown', function () {
-  if (apellido == 'meneses') {
-    alert('Hola Diego');
+apellido.addEventListener('keydown', function (event) {
+  if (event.key == 'Enter') {
+    alert(apellido.value);
   }
 });
 

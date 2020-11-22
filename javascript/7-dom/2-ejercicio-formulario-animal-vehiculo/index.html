@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="p-3">
+    <h2>Encuesta de vehículos y animales</h2>
+    <p>
+      Hola bienvenido. ¿Desea responder una breve encuesta sobre vehículos y
+      animales?
+    </p>
+
+    <div class="d-flex">
+      <div class="form-check-inline custom-control custom-switch">
+        <input
+          type="radio"
+          name="respuestaInicioEncuesta"
+          class="custom-control-input"
+          id="respuesta-si"
+        />
+        <label class="custom-control-label" for="respuesta-si">Si</label>
+      </div>
+      <div class="form-check-inline custom-control custom-switch">
+        <input
+          type="radio"
+          name="respuestaInicioEncuesta"
+          class="custom-control-input"
+          id="respuesta-no"
+        />
+        <label class="custom-control-label" for="respuesta-no">No</label>
+      </div>
+    </div>
+
+    <div class="mt-3" id="encuesta"></div>
+
+    <div
+      id="mensaje-adios"
+      style="display: none"
+      class="alert alert-secondary mt-3"
+    ></div>
+  </div>
+</body>
+<footer>
+  <script src="index.js"></script>
+</footer>
