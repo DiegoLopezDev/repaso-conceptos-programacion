@@ -102,6 +102,33 @@ radioRespuestaSi.addEventListener('change', function () {
         radioAnimal.disabled = true;
 
         // Inicia la encuesta de vehículo
+
+        let formularioVehiculo = document.createElement('form');
+        formularioVehiculo.classList = 'mt-3';
+        formularioVehiculo.style = 'width: 100%; max-width: 400px';
+        formularioVehiculo.innerHTML = /*html*/ `
+        <div class="form-group">
+          <label>Peso</label>
+          <input name="peso" class="form-control">
+        </div>
+
+        <div class="form-group">
+        <label>Color</label>
+        <input name="color" class="form-control">
+        </div>
+
+        <div class="form-group">
+        <label>Marca</label>
+        <input name="marca" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Tipo</label>
+        <input name="tipo" class="form-control">
+        </div>
+        `;
+
+        encuesta.appendChild(formularioVehiculo);
       }
     });
   }
