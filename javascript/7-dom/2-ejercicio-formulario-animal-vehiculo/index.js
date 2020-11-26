@@ -3,6 +3,8 @@
  */
 let radioRespuestaSi = document.getElementById('respuesta-si');
 let radioRespuestaNo = document.getElementById('respuesta-no');
+let animales = [];
+let vehiculos = [];
 
 radioRespuestaNo.addEventListener('change', function () {
   if (radioRespuestaNo.checked == true) {
@@ -70,17 +72,27 @@ radioRespuestaSi.addEventListener('change', function () {
 
         // Inicia la encuesta de animal
         let formularioAnimal = document.createElement('form');
+        formularioAnimal.autocomplete = 'off';
         formularioAnimal.classList = 'mt-3';
         formularioAnimal.style = 'width: 100%; max-width: 400px;';
+
+        formularioAnimal.addEventListener('submit', function (event) {
+          event.preventDefault();
+          let propiedades = obtenerDatosFormulario(formularioAnimal);
+          let animal = new Animal(propiedades);
+          animales.push(animal);
+
+          alert(JSON.stringify(animal));
+        });
 
         formularioAnimal.innerHTML = /*html*/ `
           <div class="form-group">
             <label>Nombre</label>
-            <input class="form-control" name="nombre">
+            <input class="form-control" name="nombre">  <!-- nombre: Perro -->
           </div>
           <div class="form-group">
             <label>Especie</label>
-            <input class="form-control" name="especie">
+            <input class="form-control" name="especie"> <!-- especie: Acuático -->
           </div>
           <div class="form-group">
             <label>Territorio</label>
@@ -102,30 +114,38 @@ radioRespuestaSi.addEventListener('change', function () {
         radioAnimal.disabled = true;
 
         // Inicia la encuesta de vehículo
-
         let formularioVehiculo = document.createElement('form');
+        formularioVehiculo.autocomplete = 'off';
         formularioVehiculo.classList = 'mt-3';
         formularioVehiculo.style = 'width: 100%; max-width: 400px';
+
+        formularioVehiculo.addEventListener('submit', function (event) {
+          event.preventDefault();
+          let propiedades = obtenerDatosFormulario(formularioVehiculo);
+          let vehiculo = new Vehiculo(propiedades);
+          vehiculos.push(vehiculo);
+
+          alert(JSON.stringify(vehiculos));
+        });
+
         formularioVehiculo.innerHTML = /*html*/ `
         <div class="form-group">
           <label>Peso</label>
           <input name="peso" class="form-control">
         </div>
-
         <div class="form-group">
-        <label>Color</label>
-        <input name="color" class="form-control">
+          <label>Color</label>
+          <input name="color" class="form-control">
         </div>
-
         <div class="form-group">
-        <label>Marca</label>
-        <input name="marca" class="form-control"> 
+          <label>Marca</label>
+          <input name="marca" class="form-control"> 
         </div>
-
         <div class="form-group">
-        <label>Tipo</label>
-        <input name="tipo" class="form-control">
+          <label>Tipo</label>
+          <input name="tipo" class="form-control">
         </div>
+        <button type="submit" class="btn btn-primary">Añadir</button>
         `;
 
         encuesta.appendChild(formularioVehiculo);
